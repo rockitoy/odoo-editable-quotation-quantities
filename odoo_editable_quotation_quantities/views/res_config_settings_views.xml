@@ -1,26 +1,11 @@
 <odoo>
-    <record id="odoo_editable_quatation_view" model="ir.ui.view">
-        <field name="name">odoo.editable.quatation.view</field>
-        <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+    <record id="odoo_editable_quotations_view" model="ir.ui.view">
+        <field name="name">odoo.editable.quotations.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-
-            <xpath expr="//div[@id='invoice_delivery_addresses']" position="after">
-
-                <div class="col-12 col-lg-6 o_setting_box"
-                     attrs="{'invisible': [('module_sale_quotation_builder','=',False)]}">
-                    <div class="o_setting_left_pane">
-                        <field name="quotation_quantities"/>
-                    </div>
-                    <div class="o_setting_right_pane">
-                        <label for="quotation_quantities"/>
-                        <div class="text-muted">
-                            Allows your customer to change
-                            quotation quantities in the web view
-                        </div>
-                    </div>
-                </div>
-
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="quotation_quantity"/>
             </xpath>
         </field>
     </record>

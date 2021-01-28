@@ -107,9 +107,8 @@
                 </div>
             </t>
             <t t-else="">
-                <t t-set="quotation_quantities"
-                   t-value="line.env['ir.config_parameter'].sudo().get_param('odoo_editable_quotation_quantities.quotation_quantities')"/>
-                <t t-if="quotation_quantities == 'True'">
+                <t t-if="sale_order.quotation_quantity == True">
+
                     <div class="input-group js_quantity_container pull-right">
 
                         <div class="input-group-prepend d-print-none">
